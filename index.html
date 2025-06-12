@@ -1,16 +1,154 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">   
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/media.css">
     <title>Manufatto Móveis</title>
-</head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"> 
+    <style>
+        /* Cores Primárias */
+        :root {
+            --cor-preta: #000000;
+            --cor-branca: #FFFFFF;
+            --cor-cinza-escuro: #333333;
+            --cor-cinza-medio: #808080;
+            --cor-dourada: #FFD700;
+            --cor-verde-escuro: #006400;
+        }
 
+        /* Estilos Gerais */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--cor-cinza-escuro);
+            background-color: var(--cor-branca);
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: linear-gradient(135deg, var(--cor-verde-escuro), var(--cor-dourada));
+            color: var(--cor-branca);
+            padding: 15px 20px;
+            z-index: 1000;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h4 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        header .right_bx ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        header .right_bx ul li a {
+            color: var(--cor-branca);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hero {
+            background: url('assets/img/hero.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--cor-branca);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+
+        .hero button {
+            background-color: var(--cor-dourada);
+            color: var(--cor-preta);
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero button:hover {
+            background-color: var(--cor-verde-escuro);
+            color: var(--cor-branca);
+        }
+
+        section {
+            padding: 40px 20px;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .cards .card {
+            background-color: var(--cor-cinza-medio);
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .cards .card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .cards .card h3 {
+            padding: 10px;
+            margin: 0;
+            background-color: var(--cor-branca);
+        }
+
+        .cards .card:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: var(--cor-cinza-escuro);
+            color: var(--cor-branca);
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer a {
+            color: var(--cor-dourada);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+</head>
 <body>
     <!-- Cabeçalho -->
     <header>
@@ -18,147 +156,65 @@
             <h4><i class="bi bi-house-door-fill"></i> Manufatto Móveis</h4>
             <div class="right_bx">
                 <ul>
-                    <li><a href="contato.html">Contato</a></li>
-                    <li><a href="portfolio.html"><i class="bi bi-columns-gap"></i> Portfólio</a></li>
-                    <li><a href="https://wa.me/SEUNUMERODEWHATSAPP?text=Tenho%20interesse%20em%20fazer%20um%20orçamento">Faça um orçamento</a></li>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#portfolio">Portfólio</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#contato">Contato</a></li>
                 </ul>
             </div>
         </nav>
-        <div class="content">
-            <div class="cont_bx">
-                <h1>Bem-vindo(a)<br>à Manufatto!</h1>
-                <p>Onde o design encontra a funcionalidade em cada detalhe</p>
-            </div>
-            <div class="choose_bx">
-                <div class="stay_bx">
-                    <button><i class="bi bi-house-door-fill"></i></button>
-                    <button><i class="bi bi-star-fill"></i></button>
-                    <button><i class="bi bi-tv-fill"></i></button>
-                </div>
-                <div class="select">
-                    <div class="card">
-                        <h5>Localização</h5>
-                        <input type="text" value="Itapema - SC" readonly>
-                    </div>
-                    <div class="card">
-                        <h5>Tipo de Projeto</h5>
-                        <input type="text" value="Sala de Estar" id="people" readonly>    
-                    </div>
-                    <div class="card">
-                        <div class="left_box">
-                            <h5>Design por</h5>
-                            <div class="date">
-                                <h3 id="checkin_data">Manufatto</h3>
-                            </div>
-                        </div>
-                        <div class="right_box">
-                            <h5>Produção por</h5>
-                            <div class="date">
-                                <h3 id="checkout_data">Manufatto</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </header>
 
-    <!-- Seção de Cômodos -->
-    <div class="home">
-        <div class="title_button">
-            <h2>Explore nossos projetos</h2>
-            <button><a href="portfolio.html">Ver mais <i class="bi bi-arrow-right"></i></a></button>
+    <!-- Seção Hero -->
+    <section class="hero">
+        <div>
+            <h1>Transformamos seus espaços</h1>
+            <p>Móveis planejados sob medida, diretamente da fábrica para sua casa</p>
+            <button><a href="https://wa.me/5547996747715?text=Tenho%20interesse%20em%20fazer%20um%20orçamento">Faça seu Orçamento</a></button>
         </div>
+    </section>
 
-        <div class="home_bx">
-            <div class="card" onclick="location.href='portfolio.html'">
-                <img src="assets/img/banheiros/image17.jpeg" alt="Banheiro Planejado">
-                <div class="content">
-                    <div class="cont">
-                        <h4>Banheiros</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="card" onclick="location.href='portfolio.html'">
-                <img src="assets/img/cozinhas/image17.jpeg" alt="Cozinha Planejada">
-                <div class="content">
-                    <div class="cont">
-                        <h4>Cozinhas</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="card" onclick="location.href='portfolio.html'">
-                <img src="assets/img/escritorio/image10.jpeg" alt="Escritório Planejado">
-                <div class="content">
-                    <div class="cont">
-                        <h4>Escritórios</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="card" onclick="location.href='portfolio.html'">
-                <img src="assets/img/hall/image5.jpeg" alt="Hall de Entrada">
-                <div class="content">
-                    <div class="cont">
-                        <h4>Hall</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="card" onclick="location.href='portfolio.html'">
-                <img src="assets/img/quarto/image17.jpeg" alt="Quarto Planejado">
-                <div class="content">
-                    <div class="cont">
-                        <h4>Quartos</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Sobre Nós -->
+    <section id="sobre">
+        <h2>Sobre Nós</h2>
+        <p>A Manufatto Móveis é especializada em móveis planejados sob medida, combinando design exclusivo, qualidade impecável e preços acessíveis.</p>
+        <ul style="list-style-type: disc; padding-left: 20px;">
+            <li>Feitos à mão</li>
+            <li>Direto da fábrica</li>
+            <li>Projetos personalizados</li>
+        </ul>
+    </section>
 
-    <!-- Seção "Nosso Lema" -->
-    <section>
-        <h2>Nossa Missão</h2>
-        <div class="box">
-            <div class="img_bx">
-                <img src="assets/img/sala/image14.jpeg" alt="Sala Planejada">
+    <!-- Portfólio -->
+    <section id="portfolio">
+        <h2>Nossos Projetos</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="assets/img/cozinha.jpg" alt="Cozinha Planejada">
+                <h3>Cozinhas</h3>
             </div>
-            <div class="cont_box">
-                <h6><span>Manufatto</span></h6>
-                <h1>Onde o design encontra a funcionalidade<br>em cada detalhe</h1>
-                <p>Nossa missão é transformar seus espaços com móveis planejados sob medida, combinando design exclusivo, qualidade impecável e preços acessíveis.</p>
-                <ul>
-                    <li>Criamos soluções personalizadas para cada ambiente</li>
-                    <li>Madeira de alta qualidade e acabamento refinado</li>
-                    <li>Direto da fábrica para sua casa</li>
-                    <li>Compromisso com prazos e excelência</li>
-                </ul>
+            <div class="card">
+                <img src="assets/img/quarto.jpg" alt="Quarto Planejado">
+                <h3>Quartos</h3>
+            </div>
+            <div class="card">
+                <img src="assets/img/sala.jpg" alt="Sala Planejada">
+                <h3>Salas</h3>
+            </div>
+            <div class="card">
+                <img src="assets/img/banheiro.jpg" alt="Banheiro Planejado">
+                <h3>Banheiros</h3>
             </div>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <footer class="footer">
-        <div class="footer__redes">
-          <ul class="footer__redes-wrapper">
-            <li>
-              <a href="https://www.facebook.com/ManufattoMóveis" class="footer__link">
-                <i class="fa-brands fa-facebook-f"></i>
-                Facebook
-              </a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/manufattomoveis/" class="footer__link">
-                <i class="fa-brands fa-instagram"></i>
-                Instagram
-              </a>
-            </li>
-          </ul>
+    <footer>
+        <p>&copy; 2023 Manufatto Móveis | Jaraguá do Sul - SC</p>
+        <div>
+            <a href="https://www.facebook.com/manufattomoveis"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/manufattomoveis"><i class="bi bi-instagram"></i></a>
         </div>
-        <div class="separador"></div>
-        <a href="https://manufatto.com.br" class="footer__texto">© 2023 Manufatto Móveis</a>
     </footer>
-
-    <script src="assets/javascript/app.js"></script>
-    <script src="https://kit.fontawesome.com/d8cce3c0e9.js" crossorigin="anonymous"></script>
 </body>
-
 </html>
